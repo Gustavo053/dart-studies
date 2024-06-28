@@ -39,3 +39,14 @@ class SenderAccountBalanceLowestThanAmountException implements Exception {
     return 'SenderAccountBalanceLowestThanAmountException\nbalanceAccount:$balanceAccount\nbalanceTransfer:$balanceTransfer';
   }
 }
+
+class InvalidIDException implements Exception {
+  String idProvided;
+
+  InvalidIDException({required this.idProvided});
+
+  @override
+  String toString() {
+    return 'Invalid provided ID: $idProvided';
+  }
+}

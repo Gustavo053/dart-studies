@@ -45,4 +45,10 @@ class BankController {
   bool verifyId(String id) {
     return _database.containsKey(id);
   }
+
+  String checkCreateAccountDateTime(String id) {
+    if (!verifyId(id)) throw InvalidIDException(idProvided: id);
+    if (_database[id]!.createAt != null) return _database[id]!.createAt!.toString();
+    return 'The account doesn\'t has register date time stored';
+  }
 }

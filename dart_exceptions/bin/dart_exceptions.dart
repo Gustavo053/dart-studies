@@ -10,8 +10,14 @@ void main() {
 
   // Adicionando contas
   bankController.addAccount(id: "Ricarth", account: Account(name: "Ricarth Lima", balance: 400, isAuthenticated: true));
-
   bankController.addAccount(id: "Kako", account: Account(name: "Caio Couto", balance: 600, isAuthenticated: true));
+  bankController.addAccount(id: "Gustavo", account: Account(name: "Gustavo Pereira", balance: 1000, isAuthenticated: true, createAt: DateTime.now()));
+
+
+  print(bankController.checkCreateAccountDateTime('Ricarth'));
+  print(bankController.checkCreateAccountDateTime('Kako'));
+  print(bankController.checkCreateAccountDateTime('Gustavo'));
+  // print(bankController.checkCreateAccountDateTime('NotFound'));
 
   try {
     // Fazendo transferência
